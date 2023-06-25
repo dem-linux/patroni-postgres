@@ -12,15 +12,17 @@ Create Symlink on both nodes:
 
 Install Patroni on Node 1 and 2.
 
-` apt install python3-pip python3-dev libpq-dev -y 
+```
+apt install python3-pip python3-dev libpq-dev -y 
 pip3 install --upgrade pip 
 pip install patroni 
 pip install python-etcd 
-pip install psycopg2 `
+pip install psycopg2
+```
 
 Create Configuration File for Patroni:
 ```nano /etc/patroni.yml```
-Paste in from /patroni.yml change IP.
+Paste in from /dem-linux/patroni-postgres/blob/main/patroni.yml change IP.
 
 Create DataDir on both nodes:
 ``` 
@@ -33,19 +35,17 @@ Create service on both nodes:
 
 ``` 
 nano /etc/systemd/system/patroni.service
-
 Copy from /patroni.service
 
 ```
 
 Setup ETCD:
 
-``` apt install etcd -y
-
+```
+apt install etcd -y
 nano /etc/default/etcd
 ```
 Paste in from /etcd. !! Change IP !!
-
 Setup HA-PROXY:
 ```
 apt install haproxy -y
