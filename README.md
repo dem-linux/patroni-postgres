@@ -2,7 +2,7 @@ This Repo is for video setting up Patroni cluster.
 
 On the Node 1 and Node 2 install following:
 
-``` apt install postgresql postgresql-contrib -y ``´
+``` apt install postgresql postgresql-contrib -y ```
 
 Stop Postgres when it's done:
 ``` systemctl stop postgresql ```
