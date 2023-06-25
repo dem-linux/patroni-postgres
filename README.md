@@ -12,11 +12,11 @@ Create Symlink on both nodes:
 
 Install Patroni on Node 1 and 2.
 
-```apt install python3-pip python3-dev libpq-dev -y
+``` apt install python3-pip python3-dev libpq-dev -y
 pip3 install --upgrade pip
 pip install patroni
 pip install python-etcd
-pip install psycopg2``
+pip install psycopg2 ```
 
 Create Configuration File for Patroni:
 ```nano /etc/patroni.yml```
