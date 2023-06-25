@@ -2,21 +2,21 @@ This Repo is for video setting up Patroni cluster.
 
 On the Node 1 and Node 2 install following:
 
-``` apt install postgresql postgresql-contrib -y ```
+` apt install postgresql postgresql-contrib -y `
 
 Stop Postgres when it's done:
-``` systemctl stop postgresql ```
+` systemctl stop postgresql `
 
 Create Symlink on both nodes:
-``` ln -s /usr/lib/postgresql/14/bin/* /usr/sbin/ ```
+` ln -s /usr/lib/postgresql/14/bin/* /usr/sbin/ `
 
 Install Patroni on Node 1 and 2.
 
-``` apt install python3-pip python3-dev libpq-dev -y
-pip3 install --upgrade pip
-pip install patroni
-pip install python-etcd
-pip install psycopg2 ```
+` apt install python3-pip python3-dev libpq-dev -y 
+pip3 install --upgrade pip 
+pip install patroni 
+pip install python-etcd 
+pip install psycopg2 `
 
 Create Configuration File for Patroni:
 ```nano /etc/patroni.yml```
