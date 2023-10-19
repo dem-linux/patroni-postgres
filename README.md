@@ -160,6 +160,22 @@ listen stats
     stats enable
     stats uri /
 
+frontend patroni-prod
+        mode tcp
+        maxconn 5000
+        bind *:5432
+        default_backend patroni_servers
+
+
+backend patroni_servers
+        mode tcp
+        option httpchk OPTIONS /leader
+        http-check expect status 200
+        default-server inter 3s fall 3 rise 2 on-marked-down shutdown-sessions
+
+    	server node1 10.10.0.181:5432 maxconn 100 check port 8008
+    	server node2 10.10.0.182:5432 maxconn 100 check port 8008
+
 listen postgres
     bind *:5000
     option httpchk
