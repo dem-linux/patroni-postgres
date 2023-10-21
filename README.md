@@ -1,3 +1,5 @@
+# SETUP PATRONI POSTGRESQL HA CLUSTER
+
 In the video I used 2 servers for patroni, 1 for etcd and 1 for proxy. 
 
 This Repo is for video setting up Patroni cluster.
